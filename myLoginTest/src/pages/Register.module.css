@@ -1,0 +1,99 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  background-color: #ffffff;
+}
+
+.passwordRules {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.checkboxGroup input {
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  accent-color: #8b5cf6;
+}
+
+.checkboxLabel {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.submitBtn {
+  background-color: #8b5cf6;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #7c3aed;
+}
+
+.footerText {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.link {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
