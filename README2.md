@@ -190,3 +190,48 @@ Quindi, nel tuo progetto:
 - I reducer sono funzioni che aggiornano lo stato in risposta ad azioni.
 - TypeScript nel progetto serve a definire contratti chiari, evitare errori e migliorare autocomplete/controlli.
 - Il payload e il dato trasportato da un'azione Redux (qui: l'email nel login).
+
+---
+
+## Versione studio: diagramma del flusso login
+
+```mermaid
+flowchart TD
+  A[Utente compila form Login] --> B[Submit del form]
+  B --> C[handleSubmit in Login.tsx]
+  C --> D{Email e password presenti?}
+  D -- No --> E[Nessun dispatch]
+  D -- Si --> F[dispatch login(email)]
+  F --> G[Action auth/login con payload=email]
+  G --> H[Reducer login in authSlice]
+  H --> I[Stato aggiornato:
+isAuthenticated=true
+userEmail=email]
+  I --> L[UI puo leggere nuovo stato dallo store]
+```
+
+## Versione studio: mappa mentale rapida
+
+1. Routes
+   - Decidono quale pagina mostrare in base all'URL.
+   - Sono dichiarate in src/App.tsx.
+
+2. Store Redux
+   - E il contenitore centrale dello stato condiviso.
+   - Nel tuo caso contiene la sezione auth.
+
+3. Reducer
+   - E la funzione che riceve stato + azione e produce il nuovo stato.
+   - Nel tuo caso login e logout aggiornano auth.
+
+4. Payload
+   - E il dato dentro l'azione.
+   - Nel tuo login il payload e la email.
+
+## Esempio pratico super sintetico
+
+1. Sei su /login.
+2. Clicchi "Accedi".
+3. Parte login(email).
+4. Il reducer salva email e imposta autenticato.
+5. Da quel momento auth.isAuthenticated e true.
